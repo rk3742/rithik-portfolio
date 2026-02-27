@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ⚡ DEVOS v1.0 — Mad Max OS Portfolio
 
 [![Live Demo](https://img.shields.io/badge/🌐%20LIVE%20DEMO-Visit%20Portfolio-ff6a00?style=for-the-badge&labelColor=0a0705)](https://rk3742.github.io/rithik-portfolio/)
@@ -377,4 +377,4 @@ No frameworks. No build tools. Pure HTML/CSS/JS — runs anywhere.
 ---
 
 Built by **Kona Rithik Sai Kumar** | rk3742@srmist.edu.in | SRM IST 2027
->>>>>>> b6a9c91 (Fix folder structure for GitHub Pages)
+
