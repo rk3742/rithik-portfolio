@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVOS v1.0 — Kona Rithik Sai Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Rajdhani:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen">
+    <div id="boot-content">
+      <div id="boot-logo">DEVOS <span>v1.0</span></div>
+      <div id="boot-subtitle">WASTELAND DEVELOPER OPERATING SYSTEM</div>
+      <div id="boot-bar-wrap"><div id="boot-bar"></div></div>
+      <div id="boot-log"></div>
+      <div id="boot-enter" style="display:none;"><span class="blink">[ PRESS ENTER OR CLICK TO INITIALIZE ]</span></div>
+    </div>
+    <div id="boot-scanlines"></div>
+  </div>
+
+  <!-- DESKTOP -->
+  <div id="desktop" style="display:none;">
+    <canvas id="bg-canvas"></canvas>
+    <div id="vignette"></div>
+    <div id="grid-overlay"></div>
+    <div id="scanline-sweep"></div>
+    <div id="particles-js"></div>
+
+    <!-- TASKBAR -->
+    <div id="taskbar">
+      <div id="taskbar-logo">⚡ DEVOS</div>
+      <div id="taskbar-apps">
+        <button class="tb-btn" onclick="openWindow('about')">ABOUT</button>
+        <button class="tb-btn" onclick="openWindow('skills')">SKILLS</button>
+        <button class="tb-btn" onclick="openWindow('projects')">PROJECTS</button>
+        <button class="tb-btn" onclick="openWindow('experience')">EXPERIENCE</button>
+        <button class="tb-btn" onclick="openWindow('education')">EDUCATION</button>
+        <button class="tb-btn" onclick="openWindow('awards')">AWARDS</button>
+        <button class="tb-btn" onclick="openWindow('contact')">CONTACT</button>
+        <button class="tb-btn terminal-btn" onclick="openWindow('terminal')">⌨ TERMINAL</button>
+      </div>
+      <div id="taskbar-right">
+        <a href="KONA_RITHIK_SAI_KUMAR_Doc.pdf" download class="resume-dl-btn">⬇ RESUME</a>
+        <div id="taskbar-clock"></div>
+      </div>
+    </div>
+
+    <!-- DESKTOP ICONS -->
+    <div id="desktop-icons">
+      <div class="d-icon" ondblclick="openWindow('about')"><div class="d-icon-img">👤</div><div class="d-icon-label">ABOUT.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('skills')"><div class="d-icon-img">⚙️</div><div class="d-icon-label">SKILLS.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('projects')"><div class="d-icon-img">🗂️</div><div class="d-icon-label">PROJECTS.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('experience')"><div class="d-icon-img">🔧</div><div class="d-icon-label">EXPERIENCE.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('education')"><div class="d-icon-img">🎓</div><div class="d-icon-label">EDUCATION.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('awards')"><div class="d-icon-img">🏆</div><div class="d-icon-label">AWARDS.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('contact')"><div class="d-icon-img">📡</div><div class="d-icon-label">CONTACT.exe</div></div>
+      <div class="d-icon" ondblclick="openWindow('terminal')"><div class="d-icon-img">💀</div><div class="d-icon-label">TERMINAL.exe</div></div>
+    </div>
+
+    <!-- HERO -->
+    <div id="hero-center">
+      <div id="hero-glitch" data-text="KONA RITHIK SAI KUMAR">KONA RITHIK SAI KUMAR</div>
+      <div id="hero-role">FULL STACK DEVELOPER &nbsp;|&nbsp; SDE ASPIRANT &nbsp;|&nbsp; AI EXPLORER</div>
+      <div id="hero-tagline">⚡ SURVIVING THE DIGITAL WASTELAND — BUILDING THE FUTURE ⚡</div>
+      <div id="hero-hint">DOUBLE-CLICK ANY ICON &nbsp;·&nbsp; USE TASKBAR &nbsp;·&nbsp; OPEN TERMINAL</div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <div class="win" id="win-about" style="display:none; width:600px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-about')">
+        <span class="win-title">👤 ABOUT.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-about')">─</button><button class="win-close" onclick="closeWindow('win-about')">✕</button></div>
+      </div>
+      <div class="win-body">
+        <div class="about-grid">
+          <div class="about-avatar">
+            <div class="avatar-frame"><div class="avatar-inner">RK</div><div class="avatar-ring"></div></div>
+            <div class="about-status"><span class="status-dot"></span> ONLINE — OPEN TO OPPORTUNITIES</div>
+          </div>
+          <div class="about-text">
+            <h2 class="sec-title">IDENTITY FILE</h2>
+            <div class="about-line"><span class="label">NAME:</span> Kona Rithik Sai Kumar</div>
+            <div class="about-line"><span class="label">ROLE:</span> Full Stack Intern @ Beau Roi Technology</div>
+            <div class="about-line"><span class="label">BASE:</span> Chennai, Tamil Nadu</div>
+            <div class="about-line"><span class="label">CGPA:</span> 9.26 / 10.0 — SRM IST</div>
+            <div class="about-line"><span class="label">CLASS:</span> 2027 Graduate — B.Tech ECE</div>
+            <div class="about-bio">
+              <p>Pre-final year ECE student turned Software Developer. I build full-stack web systems, AI-integrated tools, and automation platforms. Currently hunting for the next mission — an SDE role at a top-tier MNC.</p>
+              <p>From React frontends to Flask backends, from ML models to IoT systems — I build things that actually work in the real world. No fluff. Just code, coffee, and ambition.</p>
+            </div>
+            <div class="about-links">
+              <a href="https://www.linkedin.com/in/kona-rithik-sai-kumar-147432292/" target="_blank" class="link-btn">⚡ LINKEDIN</a>
+              <a href="https://github.com/rk3742" target="_blank" class="link-btn">💀 GITHUB</a>
+              <a href="mailto:rk3742@srmist.edu.in" class="link-btn">📡 EMAIL</a>
+              <a href="KONA_RITHIK_SAI_KUMAR_Doc.pdf" download class="link-btn" style="background:rgba(255,106,0,0.15); border-color:var(--orange);">⬇ RESUME</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SKILLS ===== -->
+    <div class="win" id="win-skills" style="display:none; width:620px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-skills')">
+        <span class="win-title">⚙️ SKILLS.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-skills')">─</button><button class="win-close" onclick="closeWindow('win-skills')">✕</button></div>
+      </div>
+      <div class="win-body">
+        <h2 class="sec-title">SYSTEM CAPABILITIES</h2>
+        <div class="skills-categories">
+          <div class="skill-cat">
+            <div class="skill-cat-title">⚡ LANGUAGES</div>
+            <div class="skill-bars">
+              <div class="skill-item"><span>Python</span><div class="bar"><div class="bar-fill" data-w="88"></div></div><span class="pct">88%</span></div>
+              <div class="skill-item"><span>JavaScript</span><div class="bar"><div class="bar-fill" data-w="75"></div></div><span class="pct">75%</span></div>
+              <div class="skill-item"><span>C</span><div class="bar"><div class="bar-fill" data-w="70"></div></div><span class="pct">70%</span></div>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-title">🔧 FRONTEND</div>
+            <div class="skill-bars">
+              <div class="skill-item"><span>React.js</span><div class="bar"><div class="bar-fill" data-w="80"></div></div><span class="pct">80%</span></div>
+              <div class="skill-item"><span>HTML5 / CSS3</span><div class="bar"><div class="bar-fill" data-w="85"></div></div><span class="pct">85%</span></div>
+              <div class="skill-item"><span>Tailwind CSS</span><div class="bar"><div class="bar-fill" data-w="78"></div></div><span class="pct">78%</span></div>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-title">⚙️ BACKEND</div>
+            <div class="skill-bars">
+              <div class="skill-item"><span>Flask / Python</span><div class="bar"><div class="bar-fill" data-w="82"></div></div><span class="pct">82%</span></div>
+              <div class="skill-item"><span>Node.js / Express</span><div class="bar"><div class="bar-fill" data-w="70"></div></div><span class="pct">70%</span></div>
+              <div class="skill-item"><span>REST APIs</span><div class="bar"><div class="bar-fill" data-w="80"></div></div><span class="pct">80%</span></div>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-title">🤖 AI / ML</div>
+            <div class="skill-bars">
+              <div class="skill-item"><span>Scikit-learn</span><div class="bar"><div class="bar-fill" data-w="72"></div></div><span class="pct">72%</span></div>
+              <div class="skill-item"><span>Pandas / NumPy</span><div class="bar"><div class="bar-fill" data-w="78"></div></div><span class="pct">78%</span></div>
+              <div class="skill-item"><span>RAG / LLMs</span><div class="bar"><div class="bar-fill" data-w="65"></div></div><span class="pct">65%</span></div>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <div class="skill-cat-title">🛠 TOOLS & DATABASES</div>
+            <div class="skill-tags">
+              <span class="tag">GitHub</span><span class="tag">Postman</span><span class="tag">MongoDB</span>
+              <span class="tag">Android Studio</span><span class="tag">Arduino IDE</span><span class="tag">VS Code</span>
+              <span class="tag">AWS</span><span class="tag">ESP32</span><span class="tag">Streamlit</span><span class="tag">Netlify</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PROJECTS ===== -->
+    <div class="win" id="win-projects" style="display:none; width:700px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-projects')">
+        <span class="win-title">🗂️ PROJECTS.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-projects')">─</button><button class="win-close" onclick="closeWindow('win-projects')">✕</button></div>
+      </div>
+      <div class="win-body" style="overflow-y:auto; max-height:520px;">
+        <h2 class="sec-title">MISSION LOG — COMPLETED & ACTIVE</h2>
+        <div class="projects-grid">
+
+          <div class="proj-card active-mission">
+            <div class="proj-status">🔴 ACTIVE MISSION</div>
+            <div class="proj-name">RAG SYSTEM — LLM DOCUMENT RETRIEVAL</div>
+            <div class="proj-desc">Building a Retrieval-Augmented Generation pipeline that allows LLMs to answer questions from custom documents with high accuracy. Features intelligent ingestion pipelines, vector search, and response quality optimization — bridging the gap between static AI knowledge and real-world data.</div>
+            <div class="proj-tags"><span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Vector DB</span><span class="tag">LLMs</span><span class="tag">Flask</span></div>
+            <div class="proj-links"><a href="https://github.com/rk3742" target="_blank" class="link-btn sm">💀 GITHUB</a></div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-status">✅ MISSION COMPLETE — <span style="color:var(--green);">DEPLOYED LIVE</span></div>
+            <div class="proj-name">CAREERVERSE — ENGINEERING CAREER GUIDANCE</div>
+            <div class="proj-desc">A full-stack web platform helping engineering students navigate their career path. Students input interests and skill levels; the decision engine maps them to domain recommendations, learning paths, and role suggestions. Built with React + Node/Express — live and used by peers.</div>
+            <div class="proj-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Python</span><span class="tag">REST API</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/rk3742" target="_blank" class="link-btn sm">💀 GITHUB</a>
+              <a href="https://engineeringguidance.netlify.app" target="_blank" class="link-btn sm live-btn">🌐 LIVE DEMO</a>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-status">✅ MISSION COMPLETE — <span style="color:var(--green);">DEPLOYED LIVE</span></div>
+            <div class="proj-name">AUTOMATED RESUME RELEVANCE SCORER</div>
+            <div class="proj-desc">An intelligent system that parses resumes and job descriptions, then scores alignment using keyword extraction, TF-IDF matching, and semantic similarity. Helps job seekers instantly see how well their resume matches any JD — and what gaps to fill. Live on Streamlit.</div>
+            <div class="proj-tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">NLP</span><span class="tag">Scikit-learn</span><span class="tag">Streamlit</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/rk3742" target="_blank" class="link-btn sm">💀 GITHUB</a>
+              <a href="https://automatedresumerelevancechecker.streamlit.app" target="_blank" class="link-btn sm live-btn">🌐 LIVE DEMO</a>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-status">✅ MISSION COMPLETE — <span style="color:var(--green);">DEPLOYED LIVE</span></div>
+            <div class="proj-name">JARVIS AI PORTFOLIO — INTERACTIVE ASSISTANT</div>
+            <div class="proj-desc">An AI-flavored portfolio built with React and Tailwind CSS featuring an interactive assistant interface. Users can ask questions about the developer and the assistant responds with contextual info. Clean, responsive, and live. Predecessor to this DEVOS portfolio.</div>
+            <div class="proj-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Python</span><span class="tag">UI/UX</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/rk3742" target="_blank" class="link-btn sm">💀 GITHUB</a>
+              <a href="https://rithikjarvis.netlify.app" target="_blank" class="link-btn sm live-btn">🌐 LIVE DEMO</a>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-status">✅ MISSION COMPLETE</div>
+            <div class="proj-name">SMART IRRIGATION SYSTEM — IoT AUTOMATION</div>
+            <div class="proj-desc">ESP32-powered precision agriculture system that reads real-time soil moisture, temperature, and humidity data via DHT11 sensors. Automatically triggers water pump irrigation based on thresholds. Mobile monitoring dashboard allows remote control and data visualization.</div>
+            <div class="proj-tags"><span class="tag">ESP32</span><span class="tag">Arduino IDE</span><span class="tag">Python</span><span class="tag">IoT</span><span class="tag">Sensors</span></div>
+            <div class="proj-links"><a href="https://github.com/rk3742" target="_blank" class="link-btn sm">💀 GITHUB</a></div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-status">✅ MISSION COMPLETE — <span style="color:var(--amber);">PRODUCTION</span></div>
+            <div class="proj-name">APPOINTMENT BOOKING SYSTEM — BEAU ROI</div>
+            <div class="proj-desc">Production-grade full-stack appointment management system built for Beau Roi Technology. Features JWT authentication, role-based access control, real-time CRUD, email notifications, and a clean React dashboard. Handles multi-user concurrent bookings with conflict resolution.</div>
+            <div class="proj-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT Auth</span><span class="tag">Express</span></div>
+            <div class="proj-links"><span class="link-btn sm" style="border-color:#555; color:#666; cursor:default;">🔒 PRIVATE — CLIENT PROJECT</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <div class="win" id="win-experience" style="display:none; width:640px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-experience')">
+        <span class="win-title">🔧 EXPERIENCE.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-experience')">─</button><button class="win-close" onclick="closeWindow('win-experience')">✕</button></div>
+      </div>
+      <div class="win-body">
+        <h2 class="sec-title">FIELD OPERATIONS</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot active-dot"></div>
+            <div class="tl-content">
+              <div class="tl-header"><div class="tl-company">BEAU ROI TECHNOLOGY</div><div class="tl-date">JAN 2026 — PRESENT</div></div>
+              <div class="tl-role">Full Stack Development Intern · Chennai</div>
+              <div class="tl-desc">Building a production Appointment Booking System. Developing across full stack — React frontend, Node/Express backend, MongoDB database. Implemented JWT auth, role-based access, and real-time booking logic. Real client. Real pressure. Real output.</div>
+              <div class="tl-tags"><span class="tag sm">React</span><span class="tag sm">Node.js</span><span class="tag sm">MongoDB</span><span class="tag sm">JWT</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-header"><div class="tl-company">IBM × AICTE</div><div class="tl-date">AUG — SEPT 2025</div></div>
+              <div class="tl-role">Front-End Web Development Intern · Virtual</div>
+              <div class="tl-desc">Built responsive UI components and interactive layouts. Gained exposure to IBM-standard web development practices, component architecture, and real-world project delivery workflows under the AICTE initiative.</div>
+              <div class="tl-tags"><span class="tag sm">HTML5</span><span class="tag sm">CSS3</span><span class="tag sm">JavaScript</span><span class="tag sm">Responsive Design</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-header"><div class="tl-company">AICTE — GREEN SKILLS</div><div class="tl-date">JUL — AUG 2025</div></div>
+              <div class="tl-role">AI & Data Analytics Intern · Virtual</div>
+              <div class="tl-desc">Worked with real datasets performing EDA and applied introductory ML concepts. Explored AI applications in sustainability and green technologies.</div>
+              <div class="tl-tags"><span class="tag sm">Python</span><span class="tag sm">Pandas</span><span class="tag sm">Data Analysis</span><span class="tag sm">ML Basics</span></div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-header"><div class="tl-company">PRODIGY INFOTECH</div><div class="tl-date">APR — MAY 2025</div></div>
+              <div class="tl-role">Machine Learning Intern · Virtual</div>
+              <div class="tl-desc">Built and evaluated ML models for predictive analytics. Full pipeline: data cleaning, feature engineering, model training with Scikit-learn, and performance evaluation.</div>
+              <div class="tl-tags"><span class="tag sm">Python</span><span class="tag sm">Scikit-learn</span><span class="tag sm">NumPy</span><span class="tag sm">Pandas</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EDUCATION ===== -->
+    <div class="win" id="win-education" style="display:none; width:560px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-education')">
+        <span class="win-title">🎓 EDUCATION.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-education')">─</button><button class="win-close" onclick="closeWindow('win-education')">✕</button></div>
+      </div>
+      <div class="win-body">
+        <h2 class="sec-title">TRAINING GROUNDS</h2>
+        <div class="edu-cards">
+          <div class="edu-card main-edu">
+            <div class="edu-icon">🏛️</div>
+            <div class="edu-info">
+              <div class="edu-school">SRM INSTITUTE OF SCIENCE AND TECHNOLOGY</div>
+              <div class="edu-degree">B.Tech — Electronics & Communication Engineering</div>
+              <div class="edu-location">📍 Ramapuram, Chennai</div>
+              <div class="edu-meta"><span class="edu-year">2023 — 2027</span><span class="edu-cgpa">CGPA: <strong>9.26 / 10.0</strong></span></div>
+              <div class="edu-note">Top 5% of class · Full Stack & AI specialization focus</div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">📚</div>
+            <div class="edu-info">
+              <div class="edu-school">SRI CHAITANYA COLLEGE</div>
+              <div class="edu-degree">Intermediate (MPC) — Class XII</div>
+              <div class="edu-location">📍 Visakhapatnam</div>
+              <div class="edu-meta"><span class="edu-year">2023</span><span class="edu-cgpa">Score: <strong>88.3%</strong></span></div>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">🏫</div>
+            <div class="edu-info">
+              <div class="edu-school">CHALPATHI PUBLIC SCHOOL</div>
+              <div class="edu-degree">Class X — General Education</div>
+              <div class="edu-location">📍 Visakhapatnam</div>
+              <div class="edu-meta"><span class="edu-year">2021</span><span class="edu-cgpa">Score: <strong>98%</strong></span></div>
+            </div>
+          </div>
+        </div>
+        <h2 class="sec-title" style="margin-top:24px;">CERTIFICATIONS UNLOCKED</h2>
+        <div class="cert-grid">
+          <div class="cert-item"><span class="cert-icon">📜</span> IBM SkillBuild — Front-End Web Dev</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> IBM SkillBuild — AI Fundamentals</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> IBM SkillBuild — Generative AI</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> AWS Solution Architecture — Forage</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> EA Software Engineering — Forage</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> MongoDB Basics for Students</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> Python — Udemy</div>
+          <div class="cert-item"><span class="cert-icon">📜</span> Verilog HDL — Udemy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== AWARDS ===== -->
+    <div class="win" id="win-awards" style="display:none; width:520px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-awards')">
+        <span class="win-title">🏆 AWARDS.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-awards')">─</button><button class="win-close" onclick="closeWindow('win-awards')">✕</button></div>
+      </div>
+      <div class="win-body">
+        <h2 class="sec-title">BATTLE VICTORIES</h2>
+        <div class="awards-list">
+          <div class="award-item">
+            <div class="award-trophy">🏆</div>
+            <div class="award-info">
+              <div class="award-name">SMART INDIA HACKATHON 2025</div>
+              <div class="award-org">SRMIST — Internal Round Qualifier</div>
+              <div class="award-desc">Competed in India's largest hackathon. Cleared internal rounds representing SRM with a team solution for national-level problem statements.</div>
+              <div class="award-date">SEPT 2025</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-trophy">🥈</div>
+            <div class="award-info">
+              <div class="award-name">CODE AUCTION — RUNNER-UP</div>
+              <div class="award-org">AI-ZYPHER · SRMIST</div>
+              <div class="award-desc">Runner-up in competitive programming event by AI-ZYPHER club. Strong algorithmic thinking under timed pressure.</div>
+              <div class="award-date">JAN 2024</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-trophy">🏅</div>
+            <div class="award-info">
+              <div class="award-name">TECHNOTHON PARTICIPANT</div>
+              <div class="award-org">St. Joseph's College</div>
+              <div class="award-desc">Participated in inter-college Technothon event, competing against participants from multiple institutions across Chennai.</div>
+              <div class="award-date">OCT 2025</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-trophy">🎖️</div>
+            <div class="award-info">
+              <div class="award-name">PROJECT PRESENTATION WINNER</div>
+              <div class="award-org">ECE Department · SRMIST</div>
+              <div class="award-desc">Won best project award in the ECE department technical showcase — recognized for innovation and communication.</div>
+              <div class="award-date">MAY 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT ===== -->
+    <div class="win" id="win-contact" style="display:none; width:500px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-contact')">
+        <span class="win-title">📡 CONTACT.exe</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-contact')">─</button><button class="win-close" onclick="closeWindow('win-contact')">✕</button></div>
+      </div>
+      <div class="win-body">
+        <h2 class="sec-title">ESTABLISH COMMS</h2>
+        <div class="contact-grid">
+          <a href="mailto:rk3742@srmist.edu.in" class="contact-card">
+            <div class="contact-icon">📧</div>
+            <div class="contact-label">EMAIL</div>
+            <div class="contact-val">rk3742@srmist.edu.in</div>
+          </a>
+          <a href="tel:+916309340891" class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div class="contact-label">PHONE</div>
+            <div class="contact-val">+91 6309340891</div>
+          </a>
+          <a href="https://www.linkedin.com/in/kona-rithik-sai-kumar-147432292/" target="_blank" class="contact-card">
+            <div class="contact-icon">🔗</div>
+            <div class="contact-label">LINKEDIN</div>
+            <div class="contact-val">Kona Rithik Sai Kumar</div>
+          </a>
+          <a href="https://github.com/rk3742" target="_blank" class="contact-card">
+            <div class="contact-icon">💻</div>
+            <div class="contact-label">GITHUB</div>
+            <div class="contact-val">github.com/rk3742</div>
+          </a>
+        </div>
+        <a href="KONA_RITHIK_SAI_KUMAR_Doc.pdf" download class="resume-download-big">
+          <span class="rdl-icon">⬇</span>
+          <div class="rdl-text">
+            <div class="rdl-title">DOWNLOAD RESUME</div>
+            <div class="rdl-sub">KONA_RITHIK_SAI_KUMAR.pdf — Click to save</div>
+          </div>
+        </a>
+        <div class="contact-status">
+          <div class="status-bar-wrap">
+            <div class="status-label">SIGNAL STRENGTH</div>
+            <div class="signal-bars">
+              <div class="sig-bar s1"></div><div class="sig-bar s2"></div>
+              <div class="sig-bar s3"></div><div class="sig-bar s4"></div><div class="sig-bar s5"></div>
+            </div>
+          </div>
+          <div class="contact-note">⚡ Available for SDE roles, internships & collaborations. Response: &lt;24 hours.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TERMINAL ===== -->
+    <div class="win" id="win-terminal" style="display:none; width:640px; height:430px;">
+      <div class="win-bar" onmousedown="dragStart(event,'win-terminal')">
+        <span class="win-title">💀 TERMINAL.exe — DEVOS Shell v1.0</span>
+        <div class="win-controls"><button class="win-min" onclick="closeWindow('win-terminal')">─</button><button class="win-close" onclick="closeWindow('win-terminal')">✕</button></div>
+      </div>
+      <div class="win-body terminal-body">
+        <div id="term-output"></div>
+        <div id="term-input-line">
+          <span class="term-prompt">DEVOS@WASTELAND:~$&nbsp;</span>
+          <input type="text" id="term-input" autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="assets/js/boot.js"></script>
+  <script src="assets/js/background.js"></script>
+  <script src="assets/js/desktop.js"></script>
+  <script src="assets/js/terminal.js"></script>
+  <script src="assets/js/drag.js"></script>
+  <script src="assets/js/particles-config.js"></script>
+</body>
+</html>
